@@ -36,3 +36,49 @@
     transform: rotate(360deg);
   }
 }
+
+/* App.css */
+
+.imagesContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.imageDiv {
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  width: 100%;
+  padding-top: 100%; /* Maintain aspect ratio */
+}
+
+.imageDiv::after {
+  content: '';
+  display: block;
+  padding-bottom: 100%; /* Match padding-top for aspect ratio */
+}
+
+.imageDiv img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* animation styles */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  20% { opacity: 0; }
+  60% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+.fadeInClass {
+  animation-name: fadeIn;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
